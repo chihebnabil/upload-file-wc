@@ -37,3 +37,7 @@ Then use the custom element in your html using `is="custom-uploader`.
         is="custom-uploader"
 />
 ```
+
+### HTML Structure
+
+This component doesn't use shadow dom so you can customize the style using CSS and overwrite the style already included inside this custom element.
