@@ -1,6 +1,6 @@
 {
   "name": "@chihebnabil/custom-upload-element",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom element (built with lit) to add drag & drop to a file input with multiple files",
   "main": "custom-uploader.js",
   "module": "custom-uploader.js",
