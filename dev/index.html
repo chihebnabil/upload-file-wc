@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>&lt;my-element> Demo</title>
-    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script src="../node_modules/lit/polyfill-support.js"></script>
-    <script type="module" src="../my-element.js"></script>
-    <style>
-      p {
-        border: solid 1px blue;
-        padding: 8px;
-      }
-    </style>
-  </head>
-  <body>
-    <my-element>
-      <p>This is child content</p>
-    </my-element>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <title>&lt;my-element> Demo</title>
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="../node_modules/lit/polyfill-support.js"></script>
+  <script type="module" src="../custom-uploader.js"></script>
+  <style>
+    p {
+      border: solid 1px blue;
+      padding: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <style>
+    
+  </style>
+ <form action="http://localhost:8001/" method="post" enctype="multipart/form-data">
+  <custom-uploader accept="image/*" 
+  name="file[]"
+  data='["https://cdn.logo.com/hotlink-ok/logo-social.png"
+  , "https://images.unsplash.com/photo-1627373317910-4f753fee6244?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80"
+  ]' label="Please Drop your file here"> </custom-uploader>
+  <button type="submit">send</button>
+ </form>
+</body>
+
 </html>
