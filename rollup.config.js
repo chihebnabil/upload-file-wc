@@ -1,13 +1,7 @@
-/**
- * @license
- * Copyright 2018 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
-
-import summary from 'rollup-plugin-summary';
-import {terser} from 'rollup-plugin-terser';
+import {copy} from '@web/rollup-plugin-copy';
 import resolve from '@rollup/plugin-node-resolve';
-import replace from '@rollup/plugin-replace';
+import {terser} from 'rollup-plugin-terser';
+import summary from 'rollup-plugin-summary';
 
 export default {
   input: 'custom-uploader.js',
@@ -15,24 +9,21 @@ export default {
     file: 'custom-uploader.bundled.js',
     format: 'esm',
   },
-  onwarn(warning) {
-    if (warning.code !== 'THIS_IS_UNDEFINED') {
-      console.error(`(!) ${warning.message}`);
-    }
-  },
   plugins: [
-    replace({'Reflect.decorate': 'undefined'}),
+    // Resolve bare module specifiers to relative paths
     resolve(),
+    // Minify HTML template literals
+    // Minify JS
     terser({
-      ecma: 2017,
+      ecma: 2020,
       module: true,
       warnings: true,
-      mangle: {
-        properties: {
-          regex: /^__/,
-        },
-      },
     }),
+    // Print bundle summary
     summary(),
-  ],
+    // Optional: copy any static assets to build directory
+    copy({
+      patterns: ['images/**/*'],
+    }),
+  ]
 };
