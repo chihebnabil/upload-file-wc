@@ -23,7 +23,7 @@ import '@chihebnabil/custom-upload-element'
 ### With unpkg.com
 
 ```html
-<script type="module" src="//@chihebnabil/custom-upload-element"></script>
+<script type="module" src="//unpkg.com/@chihebnabil/custom-upload-element@1.0.1/custom-uploader.bundled.js"></script>
 ```
 
 Then use the custom element in your html using `is="custom-uploader`.
