@@ -1,6 +1,5 @@
 # Customized built-in elements `is="custom-uploader"`
 
-
 ## Usage
 
 ### With npm
@@ -16,25 +15,27 @@ yarn add @chihebnabil/custom-upload-element
 Then import it in your script
 
 ```js
-import '@chihebnabil/custom-upload-element'
+import '@chihebnabil/custom-upload-element';
 ```
-
 
 ### With unpkg.com
 
 ```html
-<script type="module" src="//unpkg.com/@chihebnabil/custom-upload-element@1.0.1/custom-uploader.bundled.js"></script>
+<script
+  type="module"
+  src="//unpkg.com/@chihebnabil/custom-upload-element"
+></script>
 ```
 
 Then use the custom element in your html using `is="custom-uploader`.
 
 ```html
 <input
-        type="file"
-        multiple
-        name="files[]"
-        label="Drop files here or click to upload."
-        is="custom-uploader"
+  type="file"
+  multiple
+  name="files[]"
+  label="Drop files here or click to upload."
+  is="custom-uploader"
 />
 ```
 
